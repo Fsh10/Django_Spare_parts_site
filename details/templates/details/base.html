@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'details/css/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'details/images/logo.png' %}" type="image/png">
+    <script src="https://kit.fontawesome.com/3d0e27e432.js"></script>
+</head>
+<body>
+
+{% block mainmenu %}
+<div class="header">
+    <div class="container">
+        <div class="header-line">
+            <div class="logo"></div>
+            <div class="nav">
+                {% for p in menu %}
+                <a class="nav-item" href="@">{{p}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Введите название искомой запчасти или артикул">
+        <div class="search-btn">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="cancel-btn">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+    <script>
+        const searchBtn=document.querySelector(".search-btn");
+        const cancelBtn=document.querySelector(".cancel-btn");
+        const searchBox=document.querySelector(".search-box input");
+        searchBtn.onclick = () => {
+            searchBox.parentElement.classList.add("active");
+        }
+        cancelBtn.onclick = () => {
+            searchBox.value = "";
+        }
+    </script>
+</div>
+{% endblock mainmenu %}
+
+<!-- Footer -->
+<div id="leftchapters">
+    <ul>
+        <li class="selected">Все категории</li>
+        {% for p in posts %}
+            <li><a href="{{p.url}}">{{p.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div id="footer">
+    <p>&copy; 2021 Частичное или полное копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных, строго запрещено.</p>
+</div>
+<!-- Конец footer'а и страницы -->
+
+</body>
+</html>

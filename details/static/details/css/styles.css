@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    background: url('../images/bg.png');
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 3056px;
+    width: 100%;
+    color: #444;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+
+.header-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.logo {
+    background: url('../images/logo.png');
+    width: 310px;
+    height: 100px;
+    margin-top: 30px;
+    margin-right: 150px;
+    margin-left: 30px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  color: #8B0BB7 ;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  margin-right: 28px;
+  margin-top: 18px;
+  padding: 5px 20px 5px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.nav-item:hover {
+  color: #fff;
+  background: linear-gradient(225deg, #AD87FF, #FF42CA);
+  border-color: #fff;
+  border-radius: 10px;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #343E40;
+    font-size: 19px;
+}
+
+.search-box.active {
+    height: 200px;
+}
+
+.search-box input {
+    height: 60px;
+    width: 500px;
+    border: none;
+    color: #343E40;
+    background: #fff;
+    font-size: 17.5px;
+    border-radius: 50px;
+    padding: 0 20px 0 30px;
+    outline: none;
+}
+
+.search-box .search-btn {
+    top: 50%;
+    position: absolute;
+    right: 32%;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    color: #fff;
+    background: linear-gradient(225deg, #AD87FF, #FF42CA);
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.search-box.active .search-btn {
+    right: 40%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-box .cancel-btn {
+    position: absolute;
+    top: 50%;
+    right: 29%;
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-box.active .cancel-btn {
+    right: 40%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-box .search-btn:hover, .search-box .cancel-btn:hover {
+    transform: scale(1.2);
+}
