@@ -1,0 +1,42 @@
+{% extends 'details/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+    <link rel="stylesheet" href="{% static 'details/css/head_page_styles.css' %}">
+  </head>
+  <body>
+    <div class="container1">
+      <div class="window" id="cars">По типу детали
+        <ul class="sub-menu">
+          {% for p in posts %}
+            <li><a href="{{p.url}}">{{p.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="window" id="bikes">По типу запчасти
+        <ul class="sub-menu">
+          <li><a href="#">Wheels</a></li>
+          <li><a href="#">Frames</a></li>
+          <li><a href="#">Pedals</a></li>
+          <li><a href="#">Chains</a></li>
+          <li><a href="#">Seats</a></li>
+        </ul>
+      </div>
+      <div class="window" id="trucks">По цене
+        <ul class="sub-menu">
+          <li><a href="#">Wheels</a></li>
+          <li><a href="#">Engines</a></li>
+          <li><a href="#">Bumpers</a></li>
+          <li><a href="#">Radios</a></li>
+          <li><a href="#">Windows</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
