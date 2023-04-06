@@ -24,7 +24,7 @@ spare_part = [i for i, j in spare_parts.items()]
 
 
 def head_page(request):
-    return render(request, 'details/index.html', {'posts': spare_part, 'menu': menu, 'title': 'Главная страница'})
+    return render(request, 'details/head_page.html', {'posts': spare_part, 'menu': menu, 'title': 'Главная страница'})
 
 
 def about(request):

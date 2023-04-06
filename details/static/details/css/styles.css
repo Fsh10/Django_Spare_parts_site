@@ -76,6 +76,7 @@ header {
 .nav-item:hover .nav-link {
   padding: 5px 30px 5px 30px;
 }
+
 .search-box {
   position: relative;
   display: flex;
