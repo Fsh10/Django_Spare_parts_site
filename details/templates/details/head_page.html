@@ -8,19 +8,22 @@
   <head>
     <title>My App</title>
     <link rel="stylesheet" href="{% static 'details/css/head_page_styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'details\images\spare_patrs\charge_cable\6\front.jpg' %}" type="image/png">
   </head>
   <body>
-    <div class="container1">
+    <div class="container_categories">
       <div class="window" id="cars">По типу детали
         <ul class="sub-menu">
-          {% for p in posts %}
-            <li><a href="{{p.url}}">{{p.title}}</a></li>
+          {% for p in categories_details_type%}
+            <li><a href="{{p.url}}">{{p}}</a></li>
           {% endfor %}
         </ul>
       </div>
-      <div class="window" id="bikes">По типу запчасти
+      <div class="window" id="bikes">По модели устройства
         <ul class="sub-menu">
-          <li><a href="#">Wheels</a></li>
+          {% for p in categories_details_model%}
+            <li><a href="{{p.url}}">{{p}}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="window" id="trucks">По цене
@@ -34,13 +37,18 @@
         </ul>
       </div>
     </div>
-  <div class="card">
-  <img src="https://via.placeholder.com/150" alt="Product Image">
-  <div class="details">
-    <div class="title">Product Title</div>
-    <div class="price">$19.99</div>
-    <div class="description">Product Description</div>
-  </div>
+    <div class="container_top_sales">
+      {% for p in posts %}
+      <div class="card">
+        <img src="{% static 'details\images\spare_patrs\charge_cable\6\front.jpg' %}" alt="Product Image">
+        <div class="container_name_and_title">
+          <div class="title">{{p.details_name}}</div>
+          <div class="price">{{p.details_price}} ₽.</div>
+          <button class="buy_button">Купить</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 </div>
   </body>
 </html>

@@ -3,28 +3,24 @@ from django.shortcuts import render, redirect
 from .models import *
 
 menu = ['Главная', 'Как сделать заказ?', 'Доставка', 'Оплата', 'Контакты', 'Войти']
-spare_parts = {'Фронтальная камера': 300,
-               'Основная камера': 400,
-               'Нижний шлейф': 300,
-               'Шлейф кнопок': 300,
-               'Корпус': 400,
-               'Аккумулятор': 400,
-               'Дисплей': 900,
-               'Дисплей Orig': 1400,
-               'Антенна NFC': 300,
-               'Разговорный динамик': 300,
-               'Основной динамик': 300,
-               'Вибромотор': 300,
-               'Внутренний корпусный элемент': 100,
-               'Плата на запчасти': 1000,
-               'Плата без Touch ID': 2500,
-               'Плата с Touch ID': 3500,
-               'Телефон': 10000}
-spare_part = [i for i, j in spare_parts.items()]
+details_type= ['Фронтальная камера', 'Основная камера', 'Нижний шлейф', 'Шлейф кнопок', 'Корпус', 'Аккумулятор', 'Дисплей', 'Дисплей Orig', 'Антенна NFC', 'Разговорный динамик', 'Основной динамик', 'Вибромотор', 'Корпусный элемент', 'Плата на запчасти', 'Плата без Touch ID', 'Плата с Touch ID', 'Телефон']
+
+details_model = ['6','6s','7','8', 'X']
+
+def base(request):
+    return render(request, 'details/base.html', {
+        'posts': Details.objects.all(),
+        'menu': menu,
+        'title':'Главная страница'})
 
 
 def head_page(request):
-    return render(request, 'details/head_page.html', {'posts': spare_part, 'menu': menu, 'title': 'Главная страница'})
+    return render(request, 'details/head_page.html', {
+        'posts': Details.objects.all()[295:],
+        'menu': menu,
+        'categories_details_type': details_type,
+        'categories_details_model': [" ".join(i.split("_")) for i in details_model],
+        'title': 'Главная страница'})
 
 
 def about(request):
