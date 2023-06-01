@@ -2,24 +2,44 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from .models import *
 
-menu = ['Главная', 'Как сделать заказ?', 'Доставка', 'Оплата', 'Контакты', 'Войти']
-details_type= ['Фронтальная камера', 'Основная камера', 'Нижний шлейф', 'Шлейф кнопок', 'Корпус', 'Аккумулятор', 'Дисплей', 'Дисплей Orig', 'Антенна NFC', 'Разговорный динамик', 'Основной динамик', 'Вибромотор', 'Корпусный элемент', 'Плата на запчасти', 'Плата без Touch ID', 'Плата с Touch ID', 'Телефон']
+menu = {'Помощь': ['Как сделать заказ?', 'Оплата', 'Доставка', 'Задать вопрос'], 'О нас': ['Контакты', 'О компании']}
+details_type = ['Фронтальная камера', 'Основная камера', 'Нижний шлейф', 'Шлейф кнопок', 'Корпус', 'Аккумулятор',
+                'Дисплей', 'Дисплей Orig', 'Антенна NFC', 'Разговорный динамик', 'Основной динамик', 'Вибромотор',
+                'Корпусный элемент', 'Плата на запчасти', 'Плата без Touch ID', 'Плата с Touch ID', 'Телефон']
+categories_details_type = ['Антенны', 'Динамики, вибро, taptic', 'Дисплеи', 'Камера', 'Коннекторы', 'Корпуса',
+                           'Корпусные части', 'Микросхемы', 'Микрофоны', 'Стекло для Apple/iPhone', 'Тачскрины',
+                           'Шлейфы']
+catalog_elements = ['Запчасти на', 'Смартфона', 'Ноутбука', 'Планшета', 'Аксессуары',
+                    'Инструменты', ]
 
-details_model = ['6','6s','7','8', 'X']
+details_model = ['6', '6s', '7', '8', 'X']
+
 
 def base(request):
-    return render(request, 'details/base.html', {
+    menu = {'Помощь': ['Как сделать заказ?', 'Оплата', 'Доставка', 'Задать вопрос'],
+            'О нас': ['Контакты', 'О компании']}
+
+    context = {
         'posts': Details.objects.all(),
         'menu': menu,
-        'title':'Главная страница'})
+        'title': 'Главная страница',
+    }
+
+    return render(request, 'details/base.html', context)
 
 
 def head_page(request):
+    catalog_elements_dict1 = {'Запчасти для': 'apple.png', 'Запчасти для cмартфона': 'Smartphone.png',
+                              'Запчасти для ноутбуков': 'Laptop.png', 'Запчасти для планшетов': 'tablet.png',
+                              'Аксессуары': 'accessories.png', 'Инструменты': 'insruments.png'}
+    catalog_elements_dict = {i: f"details/images/spare_patrs/for_cats_name/{j}" for i, j in
+                             catalog_elements_dict1.items()}
     return render(request, 'details/head_page.html', {
-        'posts': Details.objects.all()[295:],
+        'posts': Details.objects.all()[:5],
         'menu': menu,
-        'categories_details_type': details_type,
-        'categories_details_model': [" ".join(i.split("_")) for i in details_model],
+        'catalog_elements': catalog_elements,
+        'catalog_elements_dict': catalog_elements_dict,
+        'categories_details_type': categories_details_type,
         'title': 'Главная страница'})
 
 

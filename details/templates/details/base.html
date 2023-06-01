@@ -7,55 +7,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="stylesheet" href="{% static 'details/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'details/css/search-box+cats.css' %}">
     <link rel="shortcut icon" href="{% static 'details/images/logo.png' %}" type="image/png">
     <script src="https://kit.fontawesome.com/3d0e27e432.js"></script>
 </head>
 <body>
 
-{% block mainmenu %}
-<div class="header">
+  {% block mainmenu %}
+  <div class="header">
     <div class="container">
-        <div class="header-line">
-            <div class="logo"></div>
-            <div class="nav">
-                {% for p in menu %}
-                <a class="nav-item" href="@">{{p}}</a>
-                {% endfor %}
-            </div>
+      <div class="header-line">
+        <div class="logo"></div>
+          <div class="nav">
+            {% for key, value in menu.items %}
+              {% if key == 'О нас' or key == 'Помощь' %}
+                <div class="nav-item" href="#">{{ key }}
+                  <ul class="sub-menu-nav-item">
+                    {% for subvalue in value %}
+                      <li><a class="sub-menu-nav-link" href="#">{{ subvalue }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="nav">
+            <a class="sign-up" href="#">Войти</a>
+          </div>
+          <div class="nav">
+            <a class="sign-up" href="#">Зарегистрироваться</a>
+          </div>
+      </div>
+      <div class="search-box">
+          <input type="text" placeholder="Введите название искомой запчасти или артикул">
+          <div class="search-btn">
+              <i class="fas fa-search"></i>
+          </div>
+          <div class="cancel-btn">
+              <i class="fas fa-times"></i>
+          </div>
+      </div>
+      <script>
+          const searchBtn=document.querySelector(".search-btn");
+          const cancelBtn=document.querySelector(".cancel-btn");
+          const searchBox=document.querySelector(".search-box input");
+          searchBtn.onclick = () => {
+              searchBox.parentElement.classList.add("active");
+          }
+          cancelBtn.onclick = () => {
+              searchBox.value = "";
+          }
+      </script>
+      <div class="container_categories">
+        <div class="Name_for_cats" id="Name_for_cats">Полный каталог</div>
+        {% for l,j in catalog_elements_dict.items%}
+        <div class="window" id="cars">{{l}}
+          <img src="{% static j %}" alt="Cats Image">
+          <ul class="sub-menu">
+            {% for p in categories_details_type%}
+              <li><a href="{{p.url}}">{{p}}</a></li>
+            {% endfor %}
+          </ul>
         </div>
+        {% endfor %}
+      </div>
     </div>
-</div>
-    <div class="search-box">
-        <input type="text" placeholder="Введите название искомой запчасти или артикул">
-        <div class="search-btn">
-            <i class="fas fa-search"></i>
-        </div>
-        <div class="cancel-btn">
-            <i class="fas fa-times"></i>
-        </div>
-    </div>
-    <script>
-        const searchBtn=document.querySelector(".search-btn");
-        const cancelBtn=document.querySelector(".cancel-btn");
-        const searchBox=document.querySelector(".search-box input");
-        searchBtn.onclick = () => {
-            searchBox.parentElement.classList.add("active");
-        }
-        cancelBtn.onclick = () => {
-            searchBox.value = "";
-        }
-    </script>
-</div>
+  </div>
+
 {% endblock mainmenu %}
 {% block content %}
 
 {% endblock content %}
-
-<!-- Footer -->
-<div id="footer">
-    <p>&copy; 2021 Частичное или полное копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных, строго запрещено.</p>
-</div>
-<!-- Конец footer'а и страницы -->
-
 </body>
+<!-- Footer -->
+<footer>
+    <div class="footer">
+        <p>&copy; 2023 Копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных,  запрещено.</p>
+    </div>
+</footer>
+<!-- End of footer and page -->
+
 </html>
