@@ -1,29 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-* {
+*:not(.header-line, .container, .nav, .nav-item) {
+  width: 100%;
+  margin: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-html, body {
+body {
   background: linear-gradient( #ABAAC3, #696969);
   background-size: cover;
   font-family: 'Poppins', sans-serif;
-  width: 100%;
+  background:  url('../images/bg.png');
 }
 
 .container {
+  background:  black;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 50px; /* Adjusted height value */
+  height: 105px; /* Adjusted height value */
 }
 
 .header-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
 }
 
 .logo {
@@ -85,8 +88,6 @@ html, body {
 
 .nav-item {
   color: white;
-  text-decoration: none;
-  color: #fff;
   font-size: 12px;
   font-weight: 600;
   margin-right: 10px;
@@ -96,6 +97,7 @@ html, body {
   background-color: rgba(255, 255, 255, 0.15);
   transition: all 0.5s ease;
   text-align: center; /* Added this line */
+  display: inline-block;
 }
 
 .nav-item:hover {
@@ -108,26 +110,21 @@ html, body {
 
 .nav-item:hover .nav-link {
   color: white;
-  text-decoration: none;
   background: linear-gradient(225deg, #ad87ff, #ff42ca);
 
 }
 .sub-menu-nav-item {
+  width: 150px;
   position: absolute;
   visibility: hidden;
-  text-decoration: none;
   font-weight: 600;
   font-size: 11px;
-  margin-top: 20px;
-  margin: 20px;
+  margin-left: -55px;
+  margin-top: 10px;
   padding: 5px 20px;
   background: linear-gradient(210deg, #ad87ff 10%, #ff42ca 90% );
   border-radius: 10px;
   transition: all 0.3s ease;
-  justify-content: left;
-  align-items: center;
-  left: -60%;
-  right: -60%;
 }
 
 .nav-item:hover .sub-menu-nav-item {

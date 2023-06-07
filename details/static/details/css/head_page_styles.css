@@ -1,14 +1,9 @@
-.background {
-  background:  url('../images/bg.png');
-  width: 100%;
-  }
 
 .images_promotion_container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap; /* Added property */
-  margin-top: 100px;
 }
 
 .images_promotion_container img {

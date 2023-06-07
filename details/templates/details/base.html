@@ -12,67 +12,55 @@
     <script src="https://kit.fontawesome.com/3d0e27e432.js"></script>
 </head>
 <body>
-
-  {% block mainmenu %}
-  <div class="header">
-    <div class="container">
-      <div class="header-line">
-        <div class="logo"></div>
-          <div class="nav">
-            {% for key, value in menu.items %}
-              {% if key == 'О нас' or key == 'Помощь' %}
-                <div class="nav-item" href="#">{{ key }}
-                  <ul class="sub-menu-nav-item">
-                    {% for subvalue in value %}
-                      <li><a class="sub-menu-nav-link" href="#">{{ subvalue }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="nav">
-            <a class="sign-up" href="#">Войти</a>
-          </div>
-          <div class="nav">
-            <a class="sign-up" href="#">Зарегистрироваться</a>
-          </div>
+{% block mainmenu %}
+<div class="header">
+  <div class="container">
+    <div class="header-line">
+      <div class="logo"></div>
+      <div class="nav">
+        {% for key, value in menu.items %}
+          {% if key == 'О нас' or key == 'Помощь' %}
+            <div class="nav-item" href="#">{{ key }}
+              <ul class="sub-menu-nav-item">
+                {% for subvalue in value %}
+                  <li><a class="sub-menu-nav-link" href="#">{{ subvalue }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="nav">
+        <a class="sign-up" href="#">Войти</a>
+      </div>
+      <div class="nav">
+        <a class="sign-up" href="#">Зарегистрироваться</a>
       </div>
       <div class="search-box">
-          <input type="text" placeholder="Введите название искомой запчасти или артикул">
-          <div class="search-btn">
-              <i class="fas fa-search"></i>
-          </div>
-          <div class="cancel-btn">
-              <i class="fas fa-times"></i>
-          </div>
+        <input type="text" placeholder="Введите название искомой запчасти или артикул">
+        <div class="search-btn">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
       </div>
-      <script>
-          const searchBtn=document.querySelector(".search-btn");
-          const cancelBtn=document.querySelector(".cancel-btn");
-          const searchBox=document.querySelector(".search-box input");
-          searchBtn.onclick = () => {
-              searchBox.parentElement.classList.add("active");
-          }
-          cancelBtn.onclick = () => {
-              searchBox.value = "";
-          }
-      </script>
-      <div class="container_categories">
-        <div class="Name_for_cats" id="Name_for_cats">Полный каталог</div>
-        {% for l,j in catalog_elements_dict.items%}
-        <div class="window" id="cars">{{l}}
+    </div>
+    <div class="container_categories">
+      <div class="Name_for_cats" id="Name_for_cats">Полный каталог</div>
+      {% for l, j in catalog_elements_dict.items %}
+        <div class="window" id="cars">{{ l }}
           <img src="{% static j %}" alt="Cats Image">
           <ul class="sub-menu">
-            {% for p in categories_details_type%}
-              <li><a href="{{p.url}}">{{p}}</a></li>
+            {% for p in categories_details_type %}
+              <li><a href="{{ p.url }}">{{ p }}</a></li>
             {% endfor %}
           </ul>
         </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
   </div>
+</div>
 
 {% endblock mainmenu %}
 {% block content %}
@@ -88,3 +76,15 @@
 <!-- End of footer and page -->
 
 </html>
+
+      <script>
+        const searchBtn = document.querySelector(".search-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        const searchBox = document.querySelector(".search-box input");
+        searchBtn.onclick = () => {
+          searchBox.parentElement.classList.add("active");
+        }
+        cancelBtn.onclick = () => {
+          searchBox.value = "";
+        }
+      </script>
