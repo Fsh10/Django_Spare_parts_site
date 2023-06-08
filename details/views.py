@@ -28,6 +28,10 @@ def base(request):
     return render(request, 'details/base.html', context)
 
 
+def hi(request):
+    return render(request, 'details/greeting.html')
+
+
 def head_page(request):
     catalog_elements_dict1 = {'Apple': 'apple.png', 'Cмартфонов': 'Smartphone.png',
                               'Ноутбуков': 'Laptop.png', 'Планшетов': 'tablet.png',

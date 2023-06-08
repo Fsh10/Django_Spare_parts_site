@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-*:not(.header-line, .container, .nav, .nav-item, .search-box) {
+*:not(.header-line, .container, .nav, .nav-item, .search-box, .cancel-btn) {
   width: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -8,34 +8,32 @@
 }
 
 body {
-  background: linear-gradient( #ABAAC3, #696969);
   background-size: cover;
   font-family: 'Poppins', sans-serif;
   background:  url('../images/bg.png');
 }
 
 .container {
-  background:  black;
+  background:#F9DAA9;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 142px; /* Adjusted height value */
+  height: 70px;
 }
 
 .header-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 110px;
 }
 
 .logo {
   background: url('../images/logo.png');
   width: 200px;
-  height: 75px;
-  top: 10px;
+  height: 60px;
+  top: 7px;
   position: absolute;
-  left: 10px;
+  left: 30px;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -49,52 +47,39 @@ body {
   align-items: center;
   position: relative;
   z-index: 999;
-  margin-top: 60px; /* Adjusted margin-top value */
 }
 
 .search-box {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 20px; /* Adjusted top value */
-  color: #343e40;
+  top: 5px; /* Adjusted top value */
+  color: #FDBD57;
   font-size: 19px;
   border: 1px solid transparent;
   width: 29%; /* Adjusted width value */
 }
 
 .sign-up {
+  color: #380D39;
   align-items: center;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.6);
   font-weight: bold;
-  font-size: 12px;
-  margin-right: 15px;
-  margin-top: 18px;
-  padding: 5px 10px 5px 10px;
-  background-color: rgba(255, 255, 255);
-  border-radius: 8px;
+  font-size: 15px;
+  margin-right: 25px;
 }
 
 .sign-up:hover {
-  color: #fff;
-  background: linear-gradient(225deg, #ad87ff, #ff42ca);
-  border-color: #fff;
-  border-radius: 10px;
-  padding: 5px 30px 5px 30px;
+  color: #380D39;
   transform: scale(1.05);
   transition: all 0.5s ease;
 }
 
 .nav-item {
-  color: white;
-  font-size: 12px;
+  color: #390D3A;
+  font-size: 15px;
   font-weight: 600;
-  margin-right: 10px;
-  margin-top: 15px;
-  border-radius: 10px;
-  padding: 5px 20px;
-  background-color: rgba(255, 255, 255, 0.15);
+  margin-right: 25px;
   transition: all 0.5s ease;
   text-align: center; /* Added this line */
   display: inline-block;
@@ -102,28 +87,25 @@ body {
 
 .nav-item:hover {
   text-decoration: none;
-  color: #fff;
-  background: linear-gradient(225deg, #ad87ff, #ff42ca);
-  border-color: #fff;
+  color: #390D3A;
   transform: scale(1.05);
 }
 
 .nav-item:hover .nav-link {
-  color: white;
-  background: linear-gradient(225deg, #ad87ff, #ff42ca);
+  color: 390D3A;
+  background: linear-gradient(225deg, #ad87ff, #B9D4AC);
 
 }
 .sub-menu-nav-item {
-  width: 150px;
   position: absolute;
+  color: 390D3A;
   visibility: hidden;
   font-weight: 600;
-  font-size: 11px;
-  margin-left: -55px;
+  font-size: 12px;
   margin-top: 10px;
   padding: 5px 20px;
-  background: linear-gradient(210deg, #ad87ff 10%, #ff42ca 90% );
-  border-radius: 10px;
+  background: #fff;
+  width: fit-content;
   transition: all 0.3s ease;
 }
 
@@ -144,7 +126,7 @@ body {
   text-decoration: none;
   height: 30px;
   font-family: Arial;
-  color: #000;
+  color: #fff;
   opacity: 0.9;
 }
 
@@ -155,18 +137,17 @@ body {
 
 .search-box {
   position: absolute; /* added */
-  left: 50%; /* added */
-  transform: translateX(-50%); /* added */
   color: #343e40;
   font-size: 19px;
   border: 1px solid transparent;
-  width: 29%; /* added */
+  width: border-box;
+  margin-top:5px;
 }
 
 .search-box input {
   font-family: 'Poppins', sans-serif;
-  height: 60px;
-  width: 100%;
+  font-weight: bold;
+  height: 45px;
   border: none;
   color: #343e40;
   font-size: 15px;
@@ -181,13 +162,13 @@ body {
   top: 50%;
   position: absolute;
   right: 5px;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
   color: #fff;
-  background: linear-gradient(225deg, #ad87ff, #ff42ca);
+  background: #FDBD57;
   text-align: center;
-  line-height: 50px;
+  line-height: 35px;
   transform: translateY(-50%);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -196,9 +177,9 @@ body {
 .search-box .cancel-btn {
   position: absolute;
   top: 50%;
-  right: -5%;
+  right: -7%;
   text-align: center;
-  line-height: 50px;
+  line-height: 30px;
   transform: translateY(-50%);
   font-size: 20px;
   color: #fff;
@@ -222,7 +203,7 @@ body {
 }
 
 .search-box .cancel-btn:hover {
-  transform: scale(1.3) translateY(-70%);
+  transform: scale(1.1) translateY(-50%);
 }
 
 .container_categories {
@@ -230,7 +211,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 69px;
   flex-direction: row;
   position: absolute;
   top: 0;

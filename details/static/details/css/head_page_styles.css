@@ -1,5 +1,5 @@
-
 .images_promotion_container {
+  margin-top: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,13 +14,12 @@
 
 .container_top_sales {
   width: fit-content;
-  margin: 30px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Updated property */
   border-radius: 10px;
   position: relative;
-  padding: 20px; /* Added property */
 }
 
 .card-container {

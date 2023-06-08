@@ -1,0 +1,28 @@
+{% extends 'details/pure.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'details/css/greeting_styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'details/images/logo.png' %}" type="image/png">
+    <script src="https://kit.fontawesome.com/3d0e27e432.js"></script>
+</head>
+  <body>
+    <div class="images_greeting_container">
+      <img src="{% static 'details/gifs/Hi.gif' %}" alt="greeting_note1">
+      <img src="{% static 'details/images/Alr_know.gif' %}" alt="greeting_note2">
+      <img src="{% static 'details/images/tip.gif' %}" alt="greeting_note3">
+    </div>
+  </body>
+<footer>
+    <div class="footer">
+        <p>&copy; 2023 Копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных,  запрещено.</p>
+    </div>
+</footer>
+</html>
+{% endblock %}
