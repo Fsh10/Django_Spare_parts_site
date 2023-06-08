@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-*:not(.header-line, .container, .nav, .nav-item) {
+*:not(.header-line, .container, .nav, .nav-item, .search-box) {
   width: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -19,20 +19,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 105px; /* Adjusted height value */
+  height: 142px; /* Adjusted height value */
 }
 
 .header-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 70px;
+  margin-bottom: 110px;
 }
 
 .logo {
   background: url('../images/logo.png');
-  width: 310px;
-  height: 100px;
+  width: 200px;
+  height: 75px;
   top: 10px;
   position: absolute;
   left: 10px;
@@ -243,7 +243,6 @@ body {
   color: #fff;
   background: linear-gradient(225deg, #AD87FF, #FF42CA 60%);
   border-color: #fff;
-  border-radius: 7px 0px 0px 7px;
   padding: 10px 30px 10px 30px;
   margin-top: 10px;
   margin: 1px;

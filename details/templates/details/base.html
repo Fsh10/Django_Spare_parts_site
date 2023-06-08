@@ -37,7 +37,7 @@
         <a class="sign-up" href="#">Зарегистрироваться</a>
       </div>
       <div class="search-box">
-        <input type="text" placeholder="Введите название искомой запчасти или артикул">
+        <input type="text" placeholder="Поиск">
         <div class="search-btn">
           <i class="fas fa-search"></i>
         </div>
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="container_categories">
-      <div class="Name_for_cats" id="Name_for_cats">Полный каталог</div>
+      <div class="Name_for_cats" id="Name_for_cats">Запчасти для:</div>
       {% for l, j in catalog_elements_dict.items %}
         <div class="window" id="cars">{{ l }}
           <img src="{% static j %}" alt="Cats Image">

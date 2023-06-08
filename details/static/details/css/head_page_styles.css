@@ -43,6 +43,7 @@
 }
 
 .card {
+  background: #F0E8F4;
   display: flex;
   flex-direction: column;
   justify-content: center;
