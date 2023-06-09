@@ -1,5 +1,16 @@
 
 
+.categories_promotion_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Added property */
+}
+
+.Picture_disp {
+}
+
+
 .images_promotion_container {
   margin-top: 45%;
   display: flex;
