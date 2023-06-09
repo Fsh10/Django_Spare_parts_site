@@ -1,13 +1,20 @@
 
 
 .categories_promotion_container {
+  margin-top: 70px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap; /* Added property */
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.Picture_disp {
+.categories_promotion_container img {
+  margin: 15px; /* Adjust the margin value as desired */
+}
+
+.promotion_image {
+  width: 450px;
+  border-radius: 20px;
 }
 
 
