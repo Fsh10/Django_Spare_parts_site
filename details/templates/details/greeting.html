@@ -1,28 +1,56 @@
-{% extends 'details/pure.html' %}
+
 {% load static %}
 
-{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'details/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'details/css/greeting_styles.css' %}">
     <link rel="shortcut icon" href="{% static 'details/images/logo.png' %}" type="image/png">
     <script src="https://kit.fontawesome.com/3d0e27e432.js"></script>
 </head>
   <body>
-    <div class="images_greeting_container">
-      <img src="{% static 'details/gifs/Hi.gif' %}" alt="greeting_note1">
-      <img src="{% static 'details/images/Alr_know.gif' %}" alt="greeting_note2">
-      <img src="{% static 'details/images/tip.gif' %}" alt="greeting_note3">
+    <div class="sign-in-up-container">
+      <div class="nav">
+        <a class="sign-up" href="#">Войти</a>
+      </div>
+      <div class="nav">
+        <a class="sign-up" href="#">Зарегистрироваться</a>
+      </div>
+    </div>
+    <div class="images_greeting_container1">
+      <img src="{% static 'details/gifs/hi.gif' %}" alt="greeting_note1">
+    </div>
+    <div class="images_greeting_container2">
+      <img src="{% static 'details/gifs/Alr_know.gif' %}" alt="greeting_note2">
+    </div>
+    <div class="search-box">
+    <input type="text" placeholder="Поиск">
+      <div class="search-btn">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="cancel-btn">
+        <i class="fas fa-times"></i>
+      </div>
+      <script>
+        const searchBtn=document.querySelector(".search-btn");
+        const cancelBtn=document.querySelector(".cancel-btn");
+        const searchBox=document.querySelector(".search-box input");
+        searchBtn.onclick = () => {
+            searchBox.parentElement.classList.add("active");
+        }
+        cancelBtn.onclick = () => {
+            searchBox.value = "";
+        }
+    </script>
+    </div>
+
+    <div class="main-catalog-container">
+        <a class="button" href="">Каталог всех товаров 📖</a>
+        <a class="button" href="http://127.0.0.1:8000/">Главная страница 🏠</a>
     </div>
   </body>
-<footer>
-    <div class="footer">
-        <p>&copy; 2023 Копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных,  запрещено.</p>
-    </div>
-</footer>
 </html>
-{% endblock %}

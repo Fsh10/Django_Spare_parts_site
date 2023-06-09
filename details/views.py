@@ -29,7 +29,13 @@ def base(request):
 
 
 def hi(request):
-    return render(request, 'details/greeting.html')
+    context = {
+        'posts': Details.objects.all(),
+        'menu': menu,
+        'title': 'Главная страница',
+    }
+
+    return render(request, 'details/greeting.html', context)
 
 
 def head_page(request):

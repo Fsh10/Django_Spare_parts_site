@@ -49,16 +49,6 @@ body {
   z-index: 999;
 }
 
-.search-box {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 5px; /* Adjusted top value */
-  color: #FDBD57;
-  font-size: 19px;
-  border: 1px solid transparent;
-  width: 29%; /* Adjusted width value */
-}
 
 .sign-up {
   color: #380D39;
@@ -136,11 +126,14 @@ body {
 }
 
 .search-box {
-  position: absolute; /* added */
-  color: #343e40;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px; /* Adjusted top value */
+  color: #FDBD57;
   font-size: 19px;
   border: 1px solid transparent;
-  width: border-box;
+  width: 29%; /* Adjusted width value */
   margin-top:5px;
 }
 

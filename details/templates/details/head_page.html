@@ -11,30 +11,30 @@
     <link rel="shortcut icon" href="{% static 'details\images\spare_patrs\charge_cable\6\front.jpg' %}" type="image/png">
   </head>
   <body>
-      <div class="images_promotion_container">
-        <img src="{% static 'details/images/Delivery_throught_SNG.png' %}" alt="Picture 1">
-        <img src="{% static 'details/images/Loylty_program.png' %}" alt="Picture 2">
-        <img src="{% static 'details/images/Trade_in.png' %}" alt="Picture 3">
+    <div class="images_promotion_container">
+      <img src="{% static 'details/images/Delivery_throught_SNG.png' %}" alt="Picture 1">
+      <img src="{% static 'details/images/Loylty_program.png' %}" alt="Picture 2">
+      <img src="{% static 'details/images/Trade_in.png' %}" alt="Picture 3">
+    </div>
+    <div class="container_top_sales">
+      <div class="container_heading">
+        <div class="Name_for_most_demand">Интересное</div>
       </div>
-      <div class="container_top_sales">
-        <div class="container_heading">
-          <div class="Name_for_most_demand">Интересное</div>
-        </div>
-        <div class="card-container">
-          {% for p in posts %}
-          <div class="card">
-            <img src="{% static 'details\images\spare_patrs\charge_cable\6\front.jpg' %}" alt="Product Image">
-            <div class="container_name_and_title">
-              <div class="title">{{p.details_type}}</div>
-              <div class="model">{{p.details_model}}</div>
-              <div class="price">{{p.details_price}} ₽.</div>
-              <button class="buy_button">Купить</button>
-              <div class="amount">В наличие 0 шт.</div>
-            </div>
+      <div class="card-container">
+        {% for p in posts %}
+        <div class="card">
+          <img src="{% static 'details\images\spare_patrs\charge_cable\6\front.jpg' %}" alt="Product Image">
+          <div class="container_name_and_title">
+            <div class="title">{{p.details_type}}</div>
+            <div class="model">{{p.details_model}}</div>
+            <div class="price">{{p.details_price}} ₽.</div>
+            <button class="buy_button">Купить</button>
+            <div class="amount">В наличие 0 шт.</div>
           </div>
-          {% endfor %}
         </div>
+        {% endfor %}
       </div>
+    </div>
   </body>
 </html>
 {% endblock %}
