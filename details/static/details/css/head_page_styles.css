@@ -1,25 +1,48 @@
-
-
 .categories_promotion_container {
   margin-top: 70px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
+  bottom:0; /* добавили */
 }
 
 .categories_promotion_container img {
-  margin: 15px; /* Adjust the margin value as desired */
+  width: 330px;
+  border-radius: 10px;
+  margin: 5px; /* Adjust the margin value as desired */
 }
 
-.promotion_image {
-  width: 450px;
-  border-radius: 20px;
+.categories_promotion_container2 {
+  margin-top: -165px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
 }
 
+.categories_promotion_container2 img {
+  width: 330px;
+  border-radius: 10px;
+  margin: 5px; /* Adjust the margin value as desired */
+}
+
+.categories_promotion_container3 {
+  margin-top: -210px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  height: 11em;
+}
+
+.categories_promotion_container3 img {
+  width: 330px;
+  border-radius: 10px;
+  margin: 5px; /* Adjust the margin value as desired */
+}
 
 .images_promotion_container {
-  margin-top: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,6 +57,7 @@
 
 .container_top_sales {
   width: fit-content;
+  width:90%;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
@@ -59,6 +83,7 @@
   border-top-right-radius: 10px;
   margin: 0;
   left: 0; /* Updated property */
+  color: #F0E8F4;
 }
 
 .card {

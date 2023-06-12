@@ -45,7 +45,7 @@ def head_page(request):
     catalog_elements_dict = {i: f"details/images/spare_patrs/for_cats_name/{j}" for i, j in
                              catalog_elements_dict1.items()}
     return render(request, 'details/head_page.html', {
-        'posts': Details.objects.all()[:5],
+        'posts': Details.objects.all()[:10],
         'menu': menu,
         'catalog_elements': catalog_elements,
         'catalog_elements_dict': catalog_elements_dict,
