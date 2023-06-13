@@ -4,13 +4,20 @@
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
-  bottom:0; /* добавили */
+  bottom: 0; /* добавили */
 }
 
 .categories_promotion_container img {
   width: 330px;
   border-radius: 10px;
-  margin: 5px; /* Adjust the margin value as desired */
+  margin: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categories_promotion_container img:hover {
+  opacity: 0.7;
+  transform: scale(1.03); /* Increase the size by 10% */
 }
 
 .categories_promotion_container2 {
@@ -19,12 +26,20 @@
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
+  transition: opacity 0.3s ease; /* Add transition property for smooth effect */
 }
 
 .categories_promotion_container2 img {
   width: 330px;
   border-radius: 10px;
   margin: 5px; /* Adjust the margin value as desired */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categories_promotion_container2 img:hover {
+  opacity: 0.7;
+  transform: scale(1.03); /* Increase the size by 10% */
 }
 
 .categories_promotion_container3 {
@@ -34,12 +49,20 @@
   align-items: start;
   flex-wrap: wrap;
   height: 11em;
+  transition: opacity 0.3s ease; /* Add transition property for smooth effect */
 }
 
 .categories_promotion_container3 img {
   width: 330px;
   border-radius: 10px;
   margin: 5px; /* Adjust the margin value as desired */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categories_promotion_container3 img:hover {
+  opacity: 0.7;
+  transform: scale(1.03); /* Increase the size by 10% */
 }
 
 .images_promotion_container {
