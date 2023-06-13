@@ -7,6 +7,7 @@ urlpatterns = [
     path('hi/', hi, name='hi'),
     path('categories/', details_list),
     path('about/', about, name='about'),
+    path('full_catalog/', full_catalog, name='full_catalog'),
     path('categories/displays/', displays),
     path('categories/displays/IPhone/', displays),
     re_path(r'^displays/IPhone/(?P<IPhone_model>[0-1]{1}[0-3]{1}|[0-1]{1}[0-3]{1}Pro|6sPlus|[0-1]{1}[0-3]{1}ProMax|XSMax|[0-1]{1}[0-3]{1}Max|[5-6]{1}s|[5-8]|[6-8]{1}Plus|XS|X|XR)/', displays_exect)

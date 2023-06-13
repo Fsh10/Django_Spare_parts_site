@@ -57,6 +57,10 @@ def about(request):
     return render(request, 'details/about.html', {'title': 'О сайте'})
 
 
+def full_catalog(request):
+    return render(request, 'details/catalog.html', {'menu': menu, 'title': ' Каталог деталей'})
+
+
 def categories(request):
     return render(request, 'details/index.html', {'menu': menu, 'title': ' Категории деталей'})
 
