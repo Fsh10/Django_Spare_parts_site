@@ -56,7 +56,7 @@
               }
           </script>
           <div class="container_categories">
-            <div class="Name_for_cats" id="Name_for_cats" data-href-append="full_catalog/">Полный каталог</div>
+            <div class="Name_for_cats" id="Name_for_cats"> <a class="link" href="full_catalog/">Полный каталог</a></div>
             {% for l,j in catalog_elements_dict.items%}
             <div class="window" id="cars">{{l}}
               <img src="{% static j %}" alt="Cats Image">

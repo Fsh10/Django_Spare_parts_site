@@ -2,29 +2,91 @@
 {% load static %}
 
 {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+    <link rel="stylesheet" href="{% static 'details/css/catalog.css' %}">
+    <link rel="shortcut icon" href="{% static 'details/images/spare_parts/charge_cable/6/front.jpg' %}" type="image/png">
+  </head>
+  <body>
+    <div class="container-catalog">
+        <div id="filters-container">
+            <h2>Фильтры</h2>
+            <h3>Модель:</h3>
+            <ul>
+                <li>
+                    <input type="checkbox" id="model-checkbox-iphone6" onchange="applyFilters()">
+                    <label for="model-checkbox-iphone6">iPhone 6</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="model-checkbox-iphone7" onchange="applyFilters()">
+                    <label for="model-checkbox-iphone7">iPhone 7</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="model-checkbox-iphone8" onchange="applyFilters()">
+                    <label for="model-checkbox-iphone8">iPhone 8</label>
+                </li>
+                <!-- Add more model checkboxes here -->
+            </ul>
 
-body>
-<div class="prod_block prod_block_opt is-product" data-id="36127" data-cid="1682" data-alias="/product/ramka-displeja-dlja-huawei-honor-10-lite-chernaja" data-title="Рамка дисплея для Honor 10 Lite/10i/20e (черная)" data-images="/images/products/no_photo.png">
-  <a class="prod_block-img" href="/product/ramka-displeja-dlja-huawei-honor-10-lite-chernaja">
-    <img data-original="https://cdn.axeum.ru/products/36127_a8511b688260c2a89438a5952867b6c9_thm.webp" src="https://cdn.axeum.ru/products/36127_a8511b688260c2a89438a5952867b6c9_thm.webp" alt="" class="">
-  </a>
-  <div class="prod_block-title">
-    <a class="prod_block-title-link" href="/product/ramka-displeja-dlja-huawei-honor-10-lite-chernaja"> Рамка дисплея для Honor 10 Lite/10i/20e (черная) </a>
-    <div class="prod_block-opts">Код товара: 36127</div>
-    <div class="prod_block-opts"></div>
-  </div>
-  <span class="prod_block-stickers">
-    <span class="prod_block-sticker_pop">Популярное</span>
-  </span>
-  <div class="prod_block-r">
-    <span class="prod_block-price">360&nbsp;<span class="ruble">руб.</span></span>
-    <a href="#" data-href="/t/baaf/36127" class="prod_block-buy basket-append-product btn btn_small btn_grey" data-show-basket-popup="1" itemscope="" itemtype="http://schema.org/BuyAction">
-      <svg class="icon"><use xlink:href="#icon-shopping-cart"></use></svg>
-    </a>
-    <a class="prod_block-fav  favorite-append " href="#" data-href-append="/t/faaf/36127" data-href-delete="/t/fadf/36127">
-      <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-    </a>
-  </div>
-</div>
+            <h3>Тип запчасти:</h3>
+            <ul>
+                {% for i, item in enumerate(sp_list) %}
+                <li>
+                    <input type="checkbox" id="{{i}}" onchange="applyFilters()">
+                    <label for="{{i}}">{{item}}</label>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
 
+        <div id="catalog-container">
+            <h2>Доступные запчасти</h2>
+            <div id="catalog">
+                <!-- This is where the spare parts will be displayed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript code here to handle checkbox filtering
+
+        function applyFilters() {
+            // Get selected checkbox values
+            var modelCheckboxes = document.querySelectorAll('input[id^="model-checkbox-"]');
+            var partTypeCheckboxes = document.querySelectorAll('input[id^="part-type-checkbox-"]');
+
+            // Get selected model filters
+            var modelFilters = [];
+            for (var i = 0; i < modelCheckboxes.length; i++) {
+                if (modelCheckboxes[i].checked) {
+                    modelFilters.push(modelCheckboxes[i].value);
+                }
+            }
+
+            // Get selected part type filters
+            var partTypeFilters = [];
+            for (var i = 0; i < partTypeCheckboxes.length; i++) {
+                if (partTypeCheckboxes[i].checked) {
+                    partTypeFilters.push(partTypeCheckboxes[i].value);
+                }
+            }
+
+            // Apply filters to display the matching spare parts
+            // You can use JavaScript to filter and display the parts based on the selected checkbox values
+
+            // Example code to display a message based on the selected filters
+            var catalog = document.getElementById("catalog");
+            catalog.innerHTML = "Showing spare parts for the following filters:<br>";
+
+            if (modelFilters.length > 0) {
+                catalog.innerHTML += "Model: " + modelFilters.join(", ") + "<br>";
+            }
+
+            if (partTypeFilters.length > 0) {
+                catalog.innerHTML += "Part Type: " + partTypeFilters.join(", ") + "<br>";
+            }
+        }
+    </script>
 {% endblock %}

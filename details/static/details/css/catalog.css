@@ -1,0 +1,84 @@
+.container-catalog {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: row;
+}
+
+#filters-container {
+    width: 20%;
+    align-items: start;
+    justify-content: start;
+    padding: 2.5%;
+}
+
+#catalog-container {
+    width: 70%;
+    padding: 20px;
+}
+
+/* Styling checkboxes */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #999;
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  position: relative;
+  background-color: #fff; /* Set the background color to white */
+}
+
+input[type="checkbox"]:checked::after {
+  content: "\2714";
+  font-size: 12px;
+  color: #333;
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+input[type="checkbox"]:focus {
+  border-color: #999;
+  box-shadow: 0 0 3px #999;
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 10px; /* Add top margin to the list */
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+ul li input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+ul li label {
+    margin: 0;
+}
+
+#catalog {
+    font-size: 14px;
+}

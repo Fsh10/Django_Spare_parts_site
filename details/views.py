@@ -6,13 +6,18 @@ menu = {'Помощь': ['Как сделать заказ?', 'Оплата', '�
 details_type = ['Фронтальная камера', 'Основная камера', 'Нижний шлейф', 'Шлейф кнопок', 'Корпус', 'Аккумулятор',
                 'Дисплей', 'Дисплей Orig', 'Антенна NFC', 'Разговорный динамик', 'Основной динамик', 'Вибромотор',
                 'Корпусный элемент', 'Плата на запчасти', 'Плата без Touch ID', 'Плата с Touch ID', 'Телефон']
-categories_details_type = ['Антенны', 'Динамики, вибро, taptic', 'Дисплеи', 'Камера', 'Коннекторы', 'Корпуса',
+categories_details_type = sp_list = ['Антенны', 'Динамики, вибро, taptic', 'Дисплеи', 'Камера', 'Коннекторы', 'Корпуса',
                            'Корпусные части', 'Микросхемы', 'Микрофоны', 'Стекло для Apple/iPhone', 'Тачскрины',
                            'Шлейфы']
 catalog_elements = ['Apple', 'Смартфона', 'Ноутбука', 'Планшета', 'Аксессуары',
                     'Инструменты', ]
 
 details_model = ['6', '6s', '7', '8', 'X']
+catalog_elements_dict1 = {'Apple': 'apple.png', 'Cмартфонов': 'Smartphone.png',
+                          'Ноутбуков': 'Laptop.png', 'Планшетов': 'tablet.png',
+                          'Аксессуары': 'accessories.png', 'Инструменты': 'insruments.png'}
+catalog_elements_dict = {i: f"details/images/spare_patrs/for_cats_name/{j}" for i, j in
+                         catalog_elements_dict1.items()}
 
 
 def base(request):
@@ -29,21 +34,10 @@ def base(request):
 
 
 def hi(request):
-    context = {
-        'posts': Details.objects.all(),
-        'menu': menu,
-        'title': 'Главная страница',
-    }
-
-    return render(request, 'details/greeting.html', context)
+    return render(request, 'details/greeting.html')
 
 
 def head_page(request):
-    catalog_elements_dict1 = {'Apple': 'apple.png', 'Cмартфонов': 'Smartphone.png',
-                              'Ноутбуков': 'Laptop.png', 'Планшетов': 'tablet.png',
-                              'Аксессуары': 'accessories.png', 'Инструменты': 'insruments.png'}
-    catalog_elements_dict = {i: f"details/images/spare_patrs/for_cats_name/{j}" for i, j in
-                             catalog_elements_dict1.items()}
     return render(request, 'details/head_page.html', {
         'posts': Details.objects.all()[:10],
         'menu': menu,
@@ -58,7 +52,13 @@ def about(request):
 
 
 def full_catalog(request):
-    return render(request, 'details/catalog.html', {'menu': menu, 'title': ' Каталог деталей'})
+    return render(request, 'details/catalog.html',
+                  {'posts': Details.objects.all()[:10],
+                   'menu': menu,
+                   'catalog_elements': catalog_elements,
+                   'catalog_elements_dict': catalog_elements_dict,
+                   'sp_list': categories_details_type,
+                   'title': 'Главная страница'})
 
 
 def categories(request):
