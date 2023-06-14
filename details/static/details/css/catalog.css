@@ -12,10 +12,14 @@
 }
 
 #catalog-container {
-    width: 70%;
-    padding: 20px;
+    width: 80%;
 }
 
+#catalog {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 /* Styling checkboxes */
 input[type="checkbox"] {
   -webkit-appearance: none;
@@ -79,6 +83,3 @@ ul li label {
     margin: 0;
 }
 
-#catalog {
-    font-size: 14px;
-}
