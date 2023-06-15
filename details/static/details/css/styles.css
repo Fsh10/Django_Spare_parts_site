@@ -236,10 +236,12 @@ body {
 
 }
 
+
 .link {
   text-decoration: none !important;
   color: #fff
   }
+
 .window {
   padding: 10px 30px 10px 30px;
   background-color: #fff;
